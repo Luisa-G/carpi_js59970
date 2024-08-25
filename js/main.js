@@ -17,6 +17,15 @@ do {
 } while (ciudad != "guadalajara" && ciudad != "chihuahua" && ciudad != "campeche");
 let consumo = parseInt(prompt("Ingresa tu consumo mensual en kWh:"));
 
+function tipoConsumo(consumo) {
+    if (consumo > 1000) {
+        return "alto";
+    } else if (consumo > 500) {
+        return "medio";
+    } else {
+        return "bajo";
+    }
+}
 
 
 function calculoAhorro(consumo, ciudad) {
@@ -32,10 +41,4 @@ function calculoAhorro(consumo, ciudad) {
     }
 }
 
-if (consumo > 1000) {
-
-}
-
-
-
-console.log("¡Hola " + nombre + "!\n\nConsumes mensualmente " + consumo + " kWh y con nuestros paneles fotovoltaicos \nvas a tener un ahorro de $" + calculoAhorro(consumo, ciudad) + " MXN al mes.");
+console.log("¡Hola " + nombre + "!\n\nTu consumo de " + consumo + " kWh al mes se considera " + tipoConsumo(consumo) +".\n\nCon nuestros paneles fotovoltaicos tendrás un ahorro de $" + calculoAhorro(consumo, ciudad) + " MXN al mes.");
