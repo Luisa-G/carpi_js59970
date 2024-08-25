@@ -1,15 +1,3 @@
-/* Comentarios
-que pueden tener
-muchas líneas */
-
-// Comentarios de una línea
-
-//! Javascript es case sensitve
-//? pregunta azul azul
-//TODO naranja
-//* verde claro
-
-
 let nombre = prompt("Ingresa tu nombre:");
 let ciudad
 do {
