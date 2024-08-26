@@ -3,7 +3,11 @@ let ciudad
 do {
     ciudad = prompt("Elige una de estas tres ciudades e ingresa su nombre:\n - Guadalajara\n - Chihuahua\n - Campeche").toLowerCase();
 } while (ciudad != "guadalajara" && ciudad != "chihuahua" && ciudad != "campeche");
-let consumo = parseInt(prompt("Ingresa tu consumo mensual en kWh:"));
+let consumo
+do{
+    consumo = parseInt(prompt("Ingresa tu consumo mensual en kWh:"));
+} while (consumo <= 0);
+
 
 function tipoConsumo(consumo) {
     if (consumo > 1000) {
