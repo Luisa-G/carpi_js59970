@@ -1,62 +1,62 @@
 // Registrar libros
 
-// function registrarLibros() {
-//     let libros = [];
-//     let continuar = true;
+function registrarLibros() {
+    let libros = [];
+    let continuar = true;
 
-//     while (continuar === true) {
-//         const titulo = prompt("¿Cuál es el nombre del libro?");
-//         const autor = prompt("¿Cuál es el nombre del autor?");
-//         let genero
-//         do {
-//             genero = prompt("¿A cuál género pertenece el libro?\n - Fantasía\n - Poesía\n - No ficción").toLowerCase();
-//         } while (genero != "fantasía" && genero != "poesía" && genero != "no ficción");
-//         let idioma 
-//         do {
-//             idioma = prompt("¿En qué idioma está escrito el libro?\n - Español\n - Inglés").toLowerCase();
-//         } while (idioma != "español" && idioma != "inglés");
+    while (continuar === true) {
+        const titulo = prompt("¿Cuál es el nombre del libro?");
+        const autor = prompt("¿Cuál es el nombre del autor?");
+        let genero
+        do {
+            genero = prompt("¿A cuál género pertenece el libro?\n - Fantasía\n - Poesía\n - No ficción").toLowerCase();
+        } while (genero != "fantasía" && genero != "poesía" && genero != "no ficción");
+        let idioma 
+        do {
+            idioma = prompt("¿En qué idioma está escrito el libro?\n - Español\n - Inglés").toLowerCase();
+        } while (idioma != "español" && idioma != "inglés");
 
-//         libros.push({titulo: titulo, autor: autor, genero: genero, idioma: idioma});
+        libros.push({titulo: titulo, autor: autor, genero: genero, idioma: idioma});
 
-//         const otroLibro = prompt("¿Quieres agregar otro libro? Si/No").toLowerCase();
-//         if (otroLibro === "si") {
-//             continuar = true;    
-//         } else {
-//             continuar = false;
-//         }
-//     }
+        const otroLibro = prompt("¿Quieres agregar otro libro? Si/No").toLowerCase();
+        if (otroLibro === "si") {
+            continuar = true;    
+        } else {
+            continuar = false;
+        }
+    }
 
-//     return libros;
-// }
-// let librosRegistrados = registrarLibros();
-// console.log(librosRegistrados);
+    return libros;
+}
+let librosRegistrados = registrarLibros();
+console.log(librosRegistrados);
 
-const librosRegistrados = [
-    {
-        titulo: "Una semana en Lugano",
-        autor: "Francisco Hinojosa",
-        genero: "fantasía",
-        idioma: "español"
-    },
-    {
-        titulo: "Harry Potter",
-        autor: "JK",
-        genero: "fantasía",
-        idioma: "inglés"
-    },
-    {
-        titulo: "Civilizada",
-        autor: "Iveth Luna",
-        genero: "poesía",
-        idioma: "español"
-    },
-    {
-        titulo: "blood and ash",
-        autor: "Jennifer",
-        genero: "fantasía",
-        idioma: "inglés"
-    },
-]
+// const librosRegistrados = [
+//     {
+//         titulo: "Una semana en Lugano",
+//         autor: "Francisco Hinojosa",
+//         genero: "fantasía",
+//         idioma: "español"
+//     },
+//     {
+//         titulo: "Harry Potter",
+//         autor: "JK",
+//         genero: "fantasía",
+//         idioma: "inglés"
+//     },
+//     {
+//         titulo: "Civilizada",
+//         autor: "Iveth Luna",
+//         genero: "poesía",
+//         idioma: "español"
+//     },
+//     {
+//         titulo: "blood and ash",
+//         autor: "Jennifer",
+//         genero: "fantasía",
+//         idioma: "inglés"
+//     },
+// ]
 
 
 // Mostrar cuantos, y cuales, libros se registraron
