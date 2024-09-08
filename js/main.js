@@ -31,33 +31,6 @@ function registrarLibros() {
 let librosRegistrados = registrarLibros();
 console.log(librosRegistrados);
 
-// const librosRegistrados = [
-//     {
-//         titulo: "Una semana en Lugano",
-//         autor: "Francisco Hinojosa",
-//         genero: "fantasía",
-//         idioma: "español"
-//     },
-//     {
-//         titulo: "Harry Potter",
-//         autor: "JK",
-//         genero: "fantasía",
-//         idioma: "inglés"
-//     },
-//     {
-//         titulo: "Civilizada",
-//         autor: "Iveth Luna",
-//         genero: "poesía",
-//         idioma: "español"
-//     },
-//     {
-//         titulo: "blood and ash",
-//         autor: "Jennifer",
-//         genero: "fantasía",
-//         idioma: "inglés"
-//     },
-// ]
-
 
 // Mostrar cuantos, y cuales, libros se registraron
 console.log(`Ingresaste un total de ${librosRegistrados.length} libros`);
