@@ -1,14 +1,139 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Biblioteca móvil</title>
-    <link rel="shortcut icon" href="./img/libro.png" type="image/x-icon">
+    <link rel="shortcut icon" href="./img/librito.png" type="image/x-icon">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 <body>
-    <h1>Biblioteca móvil</h1>
-    <h2>Sitio para registrar libros e intercambiarlos con otras personas</h2>
+    <header class="header">
+        <div class="container">
+            <h1>Biblioteca móvil</h1>
+        </div>
+    </header>
+    <main>
+        <section id="nosotros" class="section">
+            <div class="container">
+                <div class="nosotros-inner">
+                    <div class="nosotros-imagen">
+                        <img src="./img/pila-de-libros.png" alt="Pila de libros">
+                    </div>
+                    <h1 class="nosotros-title">Biblioteca móvil</h1>
+                    <p class="nosotros-subtitle">Sitio para registrar libros e intercambiarlos con otras personas.</p>
+                    <p class="nosotros-text">Primero ingresa los datos de tus libros, luego marca cuales están disponibles para préstamo y ve el resumen del tipo de libros que se tienen disponibles.</p>
+                </div>
+            </div>
+        </section>
+        
+        
+        <!-- <section id="que-hacemos" class="section section-dark">
+            <div class="container">
+                <div class="section-inner">
+                    <h2 class="section-title">¿Qué hacemos?</h2>
+                    <p class="section-text">Nos gusta compartir los libros y las lecturas</p>
+                </div>
+            </div>
+        </section> -->
+        
+        <section class="container">
+            <h2>Ingresa tus libros</h2>
+            <p>Aquí puedes guardar los libros que tienes</p>
+            <div id="formulario">
+                <div class="datos" id="datos">
+                    <form>
+                        <label for="titulo">Título:</label>
+                        <input id="titulo" name="titulo" type="text" placeholder="Ingresa el título"><br><br>
+                        <label for="autor">Autor:</label>
+                        <input id="autor" name="titulo" type="text" placeholder="Ingresa el autor"><br><br>
+                        <label for="genero">Selecciona el género literario:</label><br>
+                        <input type="radio" id="fantasia" name="genero" value="fantasia">
+                        <label for="fantasia">Fantasía</label><br>
+                        <input type="radio" id="poesia" name="genero" value="poesia">
+                        <label for="poesia">Poesía</label><br>
+                        <input type="radio" id="noFiccion" name="genero" value="noFiccion">
+                        <label for="noFiccion">No ficción</label><br><br>
+
+                        <label for="idioma">Selecciona el idioma:</label><br>
+                        <input type="radio" id="espaniol" name="idioma" value="espaniol">
+                        <label for="espaniol">Español</label><br>
+                        <input type="radio" id="ingles" name="idioma" value="ingles">
+                        <label for="ingles">Inglés</label><br><br>
+                        <input class="btn-guardar" type="submit" value="Guardar">
+                    </form> 
+                </div>
+            </div>
+        </section>
+
+
+        <section class="container">
+            <h2>Libros registrados</h2>
+            <div class="listado">
+                <div class="listado-total">
+                    <h3>Total de libros: <span id="listado-total">0</span></h3>
+                </div>
+                <div id="listado-vacio">
+                    <h4>No has ingresado libros 😞</h4>
+                </div>
+                <div class="listado-vacio d-none" id="listado-libros">
+                    <!-- Esto se va a rellenar con JS -->
+                </div>
+            </div>
+        </section>
+
+        <section class="container">
+            <h2>Consulta por género</h2>
+            <div class="filtro" id="filtro-genero">
+                <!-- Esto se va a rellenar con JS -->
+            </div>
+        </section>
+
+        <section class="container">
+            <h2>Consulta por idioma</h2>
+            <div class="filtro" id="filtro-idioma">
+            </div>
+        </section>
+
+        <!-- <section id="registra-libros" class="section section-light">
+            <div class="container">
+                <div class="section-inner">
+                    <h2 class="section-title">Registra tus libros</h2>
+                    <p class="section-text">Guarda todos los libros que tienes</p>
+                    <div class="btns">
+                        <a class="btn" href="./pages/404.html">PRÓXIMAMENTE <i class="bi bi-box-arrow-up-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section> -->
+        
+        
+        <!-- <section id="intercambia-libros" class="section section-dark">
+            <div class="container">
+                <div class="section-inner">
+                    <h2 class="section-title">Intercambia tus libros</h2>
+                    <p class="section-text">Busca libros que quieres y cambialos por alguno tuyo</p>
+                    <div class="btns">
+                        <a target="_blank" class="btn" href="./pages/404.html">PRÓXIMAMENTE <i class="bi bi-box-arrow-up-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section> -->
+    
+    
+
+    
+    </main>
+    <footer class="section section-dark">
+        <div class="container">
+            <div class="section-inner">
+                <div class="social">
+                    <a target="_blank" href="https://www.facebook.com/"><i class="bi bi-facebook"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>   
     <script src="./js/main.js"></script>
 </body>
 </html>
