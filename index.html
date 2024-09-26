@@ -27,103 +27,47 @@
                 </div>
             </div>
         </section>
-        
-        
-        <!-- <section id="que-hacemos" class="section section-dark">
-            <div class="container">
-                <div class="section-inner">
-                    <h2 class="section-title">¿Qué hacemos?</h2>
-                    <p class="section-text">Nos gusta compartir los libros y las lecturas</p>
-                </div>
-            </div>
-        </section> -->
-        
         <section class="container">
             <h2>Ingresa tus libros</h2>
             <p>Aquí puedes guardar los libros que tienes</p>
             <div id="formulario">
                 <div class="datos" id="datos">
-                    <form>
+                    <form id="form">
                         <label for="titulo">Título:</label>
                         <input id="titulo" name="titulo" type="text" placeholder="Ingresa el título"><br><br>
                         <label for="autor">Autor:</label>
                         <input id="autor" name="titulo" type="text" placeholder="Ingresa el autor"><br><br>
                         <label for="genero">Selecciona el género literario:</label><br>
-                        <input type="radio" id="fantasia" name="genero" value="fantasia">
+                        <input type="radio" id="fantasia" name="genero" value="Fantasía">
                         <label for="fantasia">Fantasía</label><br>
-                        <input type="radio" id="poesia" name="genero" value="poesia">
+                        <input type="radio" id="poesia" name="genero" value="Poesía">
                         <label for="poesia">Poesía</label><br>
-                        <input type="radio" id="noFiccion" name="genero" value="noFiccion">
+                        <input type="radio" id="noFiccion" name="genero" value="No ficción">
                         <label for="noFiccion">No ficción</label><br><br>
-
                         <label for="idioma">Selecciona el idioma:</label><br>
-                        <input type="radio" id="espaniol" name="idioma" value="espaniol">
+                        <input type="radio" id="espaniol" name="idioma" value="Español">
                         <label for="espaniol">Español</label><br>
-                        <input type="radio" id="ingles" name="idioma" value="ingles">
+                        <input type="radio" id="ingles" name="idioma" value="Inglés">
                         <label for="ingles">Inglés</label><br><br>
-                        <input class="btn-guardar" type="submit" value="Guardar">
+                        <input id="btn-guardar" class="btn-guardar" type="submit" value="Guardar">
                     </form> 
                 </div>
             </div>
         </section>
-
-
         <section class="container">
             <h2>Libros registrados</h2>
             <div class="listado">
-                <div class="listado-total">
-                    <h3>Total de libros: <span id="listado-total">0</span></h3>
+                <div id="listado-total" class="listado-total d-none">
+                    <h3>Total de libros: <span id="total">0</span></h3>
                 </div>
                 <div id="listado-vacio">
                     <h4>No has ingresado libros 😞</h4>
                 </div>
-                <div class="listado-vacio d-none" id="listado-libros">
+                <div id="listado-libros" class="listado-libros">
                     <!-- Esto se va a rellenar con JS -->
                 </div>
             </div>
         </section>
-
-        <section class="container">
-            <h2>Consulta por género</h2>
-            <div class="filtro" id="filtro-genero">
-                <!-- Esto se va a rellenar con JS -->
-            </div>
-        </section>
-
-        <section class="container">
-            <h2>Consulta por idioma</h2>
-            <div class="filtro" id="filtro-idioma">
-            </div>
-        </section>
-
-        <!-- <section id="registra-libros" class="section section-light">
-            <div class="container">
-                <div class="section-inner">
-                    <h2 class="section-title">Registra tus libros</h2>
-                    <p class="section-text">Guarda todos los libros que tienes</p>
-                    <div class="btns">
-                        <a class="btn" href="./pages/404.html">PRÓXIMAMENTE <i class="bi bi-box-arrow-up-right"></i></a>
-                    </div>
-                </div>
-            </div>
-        </section> -->
-        
-        
-        <!-- <section id="intercambia-libros" class="section section-dark">
-            <div class="container">
-                <div class="section-inner">
-                    <h2 class="section-title">Intercambia tus libros</h2>
-                    <p class="section-text">Busca libros que quieres y cambialos por alguno tuyo</p>
-                    <div class="btns">
-                        <a target="_blank" class="btn" href="./pages/404.html">PRÓXIMAMENTE <i class="bi bi-box-arrow-up-right"></i></a>
-                    </div>
-                </div>
-            </div>
-        </section> -->
-    
-    
-
-    
     </main>
     <footer class="section section-dark">
         <div class="container">
