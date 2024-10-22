@@ -3,8 +3,10 @@ let libros = JSON.parse(localStorage.getItem("libros")) || [];
 const form = document.querySelector("#form");
 const listadoVacio = document.querySelector("#listado-vacio");
 const listadoLibros = document.querySelector("#listado-libros");
+const listadoAutores = document.querySelector("#listado-autores");
 
-crearTabla();
+crearTablaLibros();
+crearTablaAutores()
 
 // Registrar libros
 form.addEventListener("submit", (e) => {
@@ -37,7 +39,7 @@ form.addEventListener("submit", (e) => {
 });
 
 // Crear tabla de libros
-function crearTabla() {
+function crearTablaLibros() {
     if (libros.length === 0) {
         listadoLibros.classList.add("d-none");
     } else {
@@ -84,10 +86,50 @@ function crearTabla() {
 function agregarLibro(nuevoLibro) {
     libros.push(nuevoLibro);
     localStorage.setItem("libros", JSON.stringify(libros));
-    crearTabla();
+    crearTablaLibros();
+    crearTablaAutores();
 };
 
 
-fetch("../data.json")
+
+
+// Crear tabla de autores
+function crearTablaAutores() {
+
+    listadoAutores.innerHTML = '';
+    let tabla = document.createElement("table");
+    tabla.classList.add("tabla");
+    tabla.innerHTML = `
+        <thead class="tabla-titulo">
+            <tr>
+                <th class="th">Nombre</th>
+                <th class="th">Grupo</th>
+                <th class="th">País</th>
+                <th class="th">Nacionalidad</th>
+            </tr>
+        </thead>
+        <tbody class="tabla-contenidoAutores" id="tabla-contenidoAutores">
+        </tbody>
+    `;
+    listadoAutores.append(tabla);
+    
+    const tablaContenidoAutores = document.querySelector("#tabla-contenidoAutores")
+
+    //Traer información de autores
+    fetch("../data.json")
     .then((resp) => resp.json())
-    .then((data) => console.log(data))
+    .then((data) => {
+        
+        data.forEach(autor => {
+            let row = document.createElement("tr");
+            row.innerHTML = `
+                <td class="td">${autor.nombre}</td>
+                <td class="td">${autor.grupo}</td>
+                <td class="td">${autor.pais}</td>
+                <td class="td">${autor.nacimiento}</td>
+            `;
+
+            tablaContenidoAutores.append(row);
+        });
+    })
+};

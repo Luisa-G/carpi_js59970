@@ -1,7 +1,7 @@
 [
-    {"autor": "JLA", "grupo": "mujer", "pais": "Estados Unidos", "nacimiento": 1980},
-    {"autor": "J. K. Rowling", "grupo": "mujer", "pais": "Reino Unido", "nacimiento": 1965},
-    {"autor": "Francisco Hinojosa", "grupo": "hombre", "pais": "México", "nacimiento": 1954},
-    {"autor": "Edgar Allan Poe", "grupo": "hombre", "pais": "USA", "nacimiento": 1809},
-    {"autor": "Alejandra Pizarnik", "grupo": "mujer", "pais": "Argentina", "nacimiento": 1936}
+    {"nombre": "JLA", "grupo": "mujer", "pais": "Estados Unidos", "nacimiento": 1980},
+    {"nombre": "J. K. Rowling", "grupo": "mujer", "pais": "Reino Unido", "nacimiento": 1965},
+    {"nombre": "Francisco Hinojosa", "grupo": "hombre", "pais": "México", "nacimiento": 1954},
+    {"nombre": "Edgar Allan Poe", "grupo": "hombre", "pais": "USA", "nacimiento": 1809},
+    {"nombre": "Alejandra Pizarnik", "grupo": "mujer", "pais": "Argentina", "nacimiento": 1936}
 ]

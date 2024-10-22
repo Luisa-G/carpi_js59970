@@ -91,7 +91,7 @@ h1, h2 {
     display: none;
 }
 
-.listado-libros {
+.listado-libros-y-autores {
     display: flex;
     flex-direction: column;
 }
@@ -110,7 +110,7 @@ h1, h2 {
     padding: 1rem;
 }
 
-.tabla-contenido {
+.tabla-contenido, .tabla-contenidoAutores {
     background-color: var(--clr-dark);
     color: var(--clr-darktext);
 }
