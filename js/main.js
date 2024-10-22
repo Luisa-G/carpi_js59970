@@ -4,9 +4,10 @@ const form = document.querySelector("#form");
 const listadoVacio = document.querySelector("#listado-vacio");
 const listadoLibros = document.querySelector("#listado-libros");
 const listadoAutores = document.querySelector("#listado-autores");
+const listadoVacioAutores = document.querySelector("#listado-vacioAutores");
 
 crearTablaLibros();
-crearTablaAutores()
+
 
 // Registrar libros
 form.addEventListener("submit", (e) => {
@@ -38,7 +39,7 @@ form.addEventListener("submit", (e) => {
     });
 });
 
-// Crear tabla de libros
+// Crear tablas de libros y autores
 function crearTablaLibros() {
     if (libros.length === 0) {
         listadoLibros.classList.add("d-none");
@@ -62,11 +63,6 @@ function crearTablaLibros() {
         listadoLibros.append(tabla);
     
         const tablaContenido = document.querySelector("#tabla-contenido")
-
-
-
-
-
     
         libros.forEach((libro) => {
         let row = document.createElement("tr");
@@ -78,7 +74,62 @@ function crearTablaLibros() {
         `;
     
         tablaContenido.append(row);
-        });
+
+        fetch("../data.json")
+            .then((resp) => resp.json())
+            .then((data) => {
+                let autorEncontrado = data.find((autor) => autor.nombre === libro.autor);
+                
+                if (autorEncontrado) {
+                    listadoVacioAutores.classList.add("d-none");
+                }
+                
+                let tablaContenidoAutores = document.querySelector("#tabla-contenidoAutores");
+                if (!tablaContenidoAutores) {
+                    
+                    let intro = document.createElement("p")
+                    intro.innerHTML = `
+                        <p>Si contamos con información de los autores registrados, se muestra aquí:</p>
+                    `;
+                    listadoAutores.append(intro);
+                    
+                    let tabla = document.createElement("table");
+                    tabla.classList.add("tabla");
+                    tabla.innerHTML = `
+                        <thead class="tabla-titulo">
+                            <tr>
+                                <th class="th">Nombre</th>
+                                <th class="th">Grupo</th>
+                                <th class="th">País</th>
+                                <th class="th">Nacionalidad</th>
+                            </tr>
+                        </thead>
+                        <tbody class="tabla-contenidoAutores" id="tabla-contenidoAutores">
+                        </tbody>
+                    `;
+                    
+                    listadoAutores.append(tabla);
+                    
+                    tablaContenidoAutores = document.querySelector("#tabla-contenidoAutores");
+                }
+                
+                let autorYaEnTabla = Array.from(tablaContenidoAutores.querySelectorAll("tr")).some(fila => {
+                    return fila.querySelector("td").textContent === autorEncontrado.nombre;
+                });
+
+                if (!autorYaEnTabla) {
+                    let row = document.createElement("tr");
+                    row.innerHTML = `
+                        <td class="td">${autorEncontrado.nombre}</td>
+                        <td class="td">${autorEncontrado.grupo}</td>
+                        <td class="td">${autorEncontrado.pais}</td>
+                        <td class="td">${autorEncontrado.nacimiento}</td>
+                    `;
+                
+                    tablaContenidoAutores.append(row);
+                }
+            });
+        })
     }
 };
 
@@ -87,49 +138,4 @@ function agregarLibro(nuevoLibro) {
     libros.push(nuevoLibro);
     localStorage.setItem("libros", JSON.stringify(libros));
     crearTablaLibros();
-    crearTablaAutores();
-};
-
-
-
-
-// Crear tabla de autores
-function crearTablaAutores() {
-
-    listadoAutores.innerHTML = '';
-    let tabla = document.createElement("table");
-    tabla.classList.add("tabla");
-    tabla.innerHTML = `
-        <thead class="tabla-titulo">
-            <tr>
-                <th class="th">Nombre</th>
-                <th class="th">Grupo</th>
-                <th class="th">País</th>
-                <th class="th">Nacionalidad</th>
-            </tr>
-        </thead>
-        <tbody class="tabla-contenidoAutores" id="tabla-contenidoAutores">
-        </tbody>
-    `;
-    listadoAutores.append(tabla);
-    
-    const tablaContenidoAutores = document.querySelector("#tabla-contenidoAutores")
-
-    //Traer información de autores
-    fetch("../data.json")
-    .then((resp) => resp.json())
-    .then((data) => {
-        
-        data.forEach(autor => {
-            let row = document.createElement("tr");
-            row.innerHTML = `
-                <td class="td">${autor.nombre}</td>
-                <td class="td">${autor.grupo}</td>
-                <td class="td">${autor.pais}</td>
-                <td class="td">${autor.nacimiento}</td>
-            `;
-
-            tablaContenidoAutores.append(row);
-        });
-    })
 };
