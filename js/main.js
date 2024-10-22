@@ -29,7 +29,7 @@ form.addEventListener("submit", (e) => {
     Swal.fire({
         title: "¡Listo!",
         text: "Tu libro quedó guardado :)",
-        imageUrl: "../img/logo.png",
+        imageUrl: "/carpi_js59970/img/logo.png",
         imageWidth: 100,
         imageHeight: 100,
         imageAlt: "Logo de libros"
