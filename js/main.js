@@ -75,7 +75,7 @@ function crearTablaLibros() {
     
         tablaContenido.append(row);
 
-        fetch("../data.json")
+        fetch("/carpi_js59970/data.json")
             .then((resp) => resp.json())
             .then((data) => {
                 let autorEncontrado = data.find((autor) => autor.nombre === libro.autor);
