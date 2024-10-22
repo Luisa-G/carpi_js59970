@@ -1,0 +1,7 @@
+[
+    {"autor": "JLA", "grupo": "mujer", "pais": "Estados Unidos", "nacimiento": 1980},
+    {"autor": "J. K. Rowling", "grupo": "mujer", "pais": "Reino Unido", "nacimiento": 1965},
+    {"autor": "Francisco Hinojosa", "grupo": "hombre", "pais": "México", "nacimiento": 1954},
+    {"autor": "Edgar Allan Poe", "grupo": "hombre", "pais": "USA", "nacimiento": 1809},
+    {"autor": "Alejandra Pizarnik", "grupo": "mujer", "pais": "Argentina", "nacimiento": 1936}
+]

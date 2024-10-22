@@ -25,6 +25,15 @@ form.addEventListener("submit", (e) => {
     agregarLibro(nuevoLibro);
 
     form.reset();
+
+    Swal.fire({
+        title: "¡Listo!",
+        text: "Tu libro quedó guardado :)",
+        imageUrl: "../img/logo.png",
+        imageWidth: 100,
+        imageHeight: 100,
+        imageAlt: "Logo de libros"
+    });
 });
 
 // Crear tabla de libros
@@ -51,6 +60,11 @@ function crearTabla() {
         listadoLibros.append(tabla);
     
         const tablaContenido = document.querySelector("#tabla-contenido")
+
+
+
+
+
     
         libros.forEach((libro) => {
         let row = document.createElement("tr");
@@ -72,3 +86,8 @@ function agregarLibro(nuevoLibro) {
     localStorage.setItem("libros", JSON.stringify(libros));
     crearTabla();
 };
+
+
+fetch("../data.json")
+    .then((resp) => resp.json())
+    .then((data) => console.log(data))
